@@ -1,0 +1,74 @@
+:root {
+  /* Element Plus 蓝色系主题 */
+  --vp-c-brand-1: #409eff;
+  --vp-c-brand-2: #79bbff;
+  --vp-c-brand-3: #a0cfff;
+  --vp-c-brand-soft: rgba(64, 158, 255, 0.14);
+  
+  /* 代码高亮主题色 */
+  --code-bg: #f5f7fa;
+  --code-border: #e4e7ed;
+  --code-text: #303133;
+  --code-keyword: #c678dd;
+  --code-string: #98c379;
+  --code-number: #d19a66;
+  --code-comment: #5c6370;
+  --code-function: #61afef;
+  --code-class: #e5c07b;
+  --code-variable: #e06c75;
+  --code-operator: #56b6c2;
+  --code-attribute: #d19a66;
+  --code-property: #abb2bf;
+  --code-tag: #e06c75;
+  --code-punctuation: #abb2bf;
+  --code-line-number: #abb2bf;
+  --code-line-number-bg: #fafafa;
+}
+
+.dark {
+  --vp-c-brand-1: #409eff;
+  --vp-c-brand-2: #66b1ff;
+  --vp-c-brand-3: #79bbff;
+  --vp-c-brand-soft: rgba(64, 158, 255, 0.16);
+  
+  /* 深色模式代码高亮主题色 */
+  --code-bg: #1e1e1e;
+  --code-border: #3c3c3c;
+  --code-text: #d4d4d4;
+  --code-keyword: #c586c0;
+  --code-string: #6a9955;
+  --code-number: #b5cea8;
+  --code-comment: #6a9955;
+  --code-function: #dcdcaa;
+  --code-class: #4ec9b0;
+  --code-variable: #9cdcfe;
+  --code-operator: #d4d4d4;
+  --code-attribute: #9cdcfe;
+  --code-property: #9cdcfe;
+  --code-tag: #569cd6;
+  --code-punctuation: #d4d4d4;
+  --code-line-number: #858585;
+  --code-line-number-bg: #252526;
+}
+html, body {
+  scrollbar-gutter: stable both-edges; 
+}
+
+::-webkit-scrollbar:vertical {
+  width: 12px; 
+}
+
+::-webkit-scrollbar-track:vertical {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background-color: rgba(155, 155, 155, 0.3);
+  border-radius: 10px;
+  border: 2px solid transparent; 
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgba(155, 155, 155, 0.7); 
+}

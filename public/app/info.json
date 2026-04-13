@@ -1,0 +1,9 @@
+{
+  "name": "CurbUI",
+  "version": "1.0.1",
+  "packageName": "com.curbui.ui",
+  "iosAppId": "123456789",
+  "isForce": false,
+  "downloadUrl": "https://gitee.com/firefly0_0/curb-ui-docs/releases/download/1.0.0/app-arm64-v8a-release.apk",
+  "log": "测试更新\n1. [优化] 提升应用启动速度\n2. [新增] 个人中心支持更换头像\n3. [修复] 修复了已知的部分 UI 闪烁问题"
+}

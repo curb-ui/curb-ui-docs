@@ -1,0 +1,28 @@
+{
+  "name": "curb_ui",
+  "version": "1.0.0",
+  "description": "一个精致的 Flutter 设计系统，提供全面的 UI 组件和工具，用于构建美观、一致且响应式的应用程序。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev .",
+     "docs:build": "vitepress build .",
+    "docs:preview": "vitepress preview .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/firefly0_0/curb-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
