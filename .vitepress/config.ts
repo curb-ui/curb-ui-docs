@@ -7,6 +7,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/favicon.png' }]
   ],
   themeConfig: {
+    logo: '/public/logo.png',
     nav: [
       { text: '指南', link: '/' },
       { text: '组件', link: '/content/components/' },
@@ -83,7 +84,8 @@ export default defineConfig({
             { text: 'Toast 轻提示', link: '/content/components/cu_toast' },
             { text: 'Loading 加载', link: '/content/components/cu_loading' },
             { text: 'Bottom Sheet 底部抽屉', link: '/content/components/cu_bottom_sheet' },
-            { text: 'Refresh 刷新', link: '/content/components/cu_refresh' }
+            { text: 'Refresh 刷新', link: '/content/components/cu_refresh' },
+            { text: 'Upgrade 应用更新', link: '/content/components/cu_upgrade' }
           ]
         }
       ],
@@ -153,7 +155,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: '联系邮箱: curbui@yeah.net | Released under the MIT License.',
+      message: '联系邮箱: <a href="mailto:curbui@yeah.net">curbui@yeah.net</a> | <a href="/content/agreement">用户服务协议</a> | <a href="/content/privacy">隐私政策</a> | Released under the MIT License.',
       copyright: 'Copyright © 2026 CurbUI'
     }
   },
