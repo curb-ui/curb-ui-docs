@@ -16,7 +16,6 @@ export default defineConfig({
       { text: 'API', link: '/content/api/' },
       { text: '更新日志', link: '/content/changelog' },
       { text: '贡献指南', link: '/content/contributing' },
-      { text: 'GitHub', link: 'https://github.com' }
     ],
 
     sidebar: {
@@ -143,7 +142,8 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com' }
+      { icon: 'github', link: 'https://github.com/curb-ui/curb-ui-docs' },
+      { icon: 'gitee', link: 'https://gitee.com/curb-ui/curb-ui-docs' }
     ],
 
     docFooter: {
