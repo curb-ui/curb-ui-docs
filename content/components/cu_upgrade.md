@@ -7,21 +7,27 @@
 
 ## 1. 基础用法
 
+
 ### 1.1 使用 CuUpgradeDialog 直接调用
 
 通过静态方法 `show()` 直接唤起更新弹窗。
 
 ```dart
+import 'package:flutter/material.dart';
 import 'package:curb_ui/curb_ui.dart';
+import 'package:provider/provider.dart';
 
 void checkAppUpdate() {
-  CuUpgradeDialog.show(
-    version: "1.0.2",
-    content: "1. 优化 UI 渲染性能\n2. 修复已知安装包解析异常问题\n3. 适配 Android 14 权限体系",
-    downloadUrl: "https://your-server.com/app-release.apk",
-    iosAppId: "123456789",
-    isForce: false,
-  );
+  final appProvider = context.watch<AppProvider>();
+  if (appProvider.hasNewVersion){
+    CuUpgradeDialog.show(
+      version: appProvider.remoteVersionInfo.version,
+      content: appProvider.remoteVersionInfo.log,
+      downloadUrl: appProvider.remoteVersionInfo.downloadUrl,
+      iosAppId: appProvider.remoteVersionInfo.iosAppId,
+      isForce: appProvider.remoteVersionInfo.isForce,
+    );
+  }
 }
 ```
 

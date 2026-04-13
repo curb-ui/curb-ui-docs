@@ -13,6 +13,10 @@ hero:
       link: /content/components/index 
 
 features:
+  - icon: 🚀
+    title: Cool-Admin 生态兼容
+    details: 深度适配 Cool-Admin 后端架构，内置登录鉴权、用户权限管理及文件上传等 API 逻辑，实现前后端无缝对接。
+
   - icon: 🧩
     title: 语义化组件
     details: 提供丰富的语义化组件，让开发像写 HTML 一样直观，通过简单的 API 即可实现复杂的页面布局。
@@ -35,11 +39,11 @@ features:
 
   - icon: ⚡
     title: 开发效率
-    details: 完整的项目架构方案，从环境配置到业务开发一站式解决，大幅提升开发效率。
+    details: 完整的项目架构方案，从环境配置到业务开发一站式解决，大幅提升全栈开发效率。
 
-  - icon: 📱
-    title: 响应式设计
-    details: 自适应所有屏幕尺寸，从手机到平板再到桌面，一套代码多端适配。
+  - icon: 🏗️
+    title: 工程化落地
+    details: 内置符合国内监管要求的开屏隐私合规流程、自动登录鉴权及多环境配置。
 
   - icon: 🔧
     title: 状态管理
