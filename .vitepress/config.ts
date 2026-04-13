@@ -16,6 +16,7 @@ export default defineConfig({
       { text: 'API', link: '/content/api/' },
       { text: '更新日志', link: '/content/changelog' },
       { text: '贡献指南', link: '/content/contributing' },
+      { text: '关于我们', link: '/content/about' },
     ],
 
     sidebar: {
@@ -152,7 +153,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Released under the MIT License.',
+      message: '联系邮箱: curbui@yeah.net | Released under the MIT License.',
       copyright: 'Copyright © 2026 CurbUI'
     }
   },
