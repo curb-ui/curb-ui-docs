@@ -5,9 +5,8 @@
     <div class="content-container">
       <div class="phone-box">
         <div class="phone-case"
-          @mouseenter="lockScroll" 
-            @mouseleave="unlockScroll"
-            @touchmove.stop>
+          @mouseenter="lockScroll" @mouseleave="unlockScroll"
+            >
           <div class="phone-screen-container">
             <div class="dynamic-island"></div>
             <div class="status-bar">
@@ -114,7 +113,7 @@ onUnmounted(() => {
 
 /* 手机模型样式 */
 .phone-box {
-  width: 360px;
+  width: 384px;
   flex-shrink: 0;
   filter: drop-shadow(0 30px 60px rgba(0,0,0,0.25));
 }
@@ -227,9 +226,6 @@ onUnmounted(() => {
     padding: 30px 0px;
     margin-top: 20px;
   }
-  .phone-box {
-  width: calc(100vw - 48px - 20px);
-}
   .content-container {
     flex-direction: column;
     gap: 40px;
