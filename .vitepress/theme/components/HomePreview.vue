@@ -85,9 +85,6 @@ onUnmounted(() => {
 <style scoped>
 .home-preview-wrapper {
   position: relative;
-  padding: 100px 20px;
-  margin-top: 40px;
-  overflow: hidden;
 }
 
 /* 填补空白的核心：背景装饰 */
@@ -224,10 +221,7 @@ onUnmounted(() => {
 
 /* 移动端适配 */
 @media (max-width: 850px) {
-  .home-preview-wrapper{
-    padding: 30px 0px;
-    margin-top: 20px;
-  }
+  
   .content-container {
     flex-direction: column;
     gap: 40px;
