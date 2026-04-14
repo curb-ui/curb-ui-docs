@@ -16,10 +16,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/firefly0_0/curb-ui.git"
+    "url": "https://gitee.com/curb-ui/curb-ui-docs.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "curbui@yeah.net",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
