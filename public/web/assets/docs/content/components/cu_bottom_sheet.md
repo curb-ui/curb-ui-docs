@@ -475,6 +475,10 @@ CuButton(
 | `showCloseIcon` | `bool` | `false` | 是否显示关闭图标 |
 | `backgroundColor` | `Color?` | — | 弹窗背景色 |
 | `forceMaxHeight` | `bool` | `false` | 是否强制最大高度 |
+| `autoScroll` | `bool` | `true` | 是否自动滚动 |
+| `maxHeight` | `double?` | — | 最大高度 |
+
+
 
 ### 内部逻辑优先级
 

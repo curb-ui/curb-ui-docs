@@ -268,7 +268,115 @@ CuCard(
 
 ---
 
-## 6. 技术规范与逻辑映射
+## 6. 平台配置说明
+
+为了确保 `CuUpload` 组件在多端（Android, iOS, Web, macOS）顺畅运行，请根据您的目标平台完成以下配置。
+
+### 6.1 Android 配置
+
+针对 Android 13+ (API 33) 的分区存储特性，权限声明需精细化。
+
+**权限声明**：在 `AndroidManifest.xml` 的 `&lt;manifest&gt;` 根标签下添加：
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+
+<uses-permission android:name="android.permission.CAMERA" />
+
+<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+```
+
+**存储特性适配**：在 `application` 标签中启用旧版存储兼容（主要针对 Android 10）：
+
+```xml
+<application android:requestLegacyExternalStorage="true" />
+```
+
+### 6.2 iOS &amp; macOS 配置
+
+#### iOS 配置
+
+在 `ios/Runner/Info.plist` 中添加以下内容（请务必提供真实的描述文字，否则 Apple 审核可能会拒绝上架）：
+
+```xml
+<key>NSPhotoLibraryUsageDescription</key>
+<string>我们需要访问您的相册以挑选并上传反馈截图。</string>
+<key>NSCameraUsageDescription</key>
+<string>我们需要使用您的相机拍摄现场照片以进行问题反馈。</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>我们需要使用您的麦克风以录制反馈视频。</string>
+
+<key>LSSupportsOpeningDocumentsInPlace</key>
+<true/>
+<key>UISupportsDocumentBrowser</key>
+<true/>
+```
+
+#### macOS 配置
+
+如果你在 Hackintosh 或 Mac 上开发桌面端，需在 `macos/Runner/Debug.entitlements` 中开启沙盒权限：
+
+```xml
+<key>com.apple.security.files.user-selected.read-write</key>
+<true/>
+<key>com.apple.security.device.camera</key>
+<true/>
+```
+
+### 6.3 Web 端特别说明
+
+Web 端**不需要**在 `index.html` 配置权限，但有以下限制：
+
+- **拍照功能**：在 Web 端通常回退为文件选择（除非使用特定的 `camera` 插件）。
+- **跨域 (CORS)**：如果上传至飞书等第三方接口，请确保后端已配置 CORS 允许您的域名访问。
+- **Path 限制**：Web 端无法获取 `file.path`，只能通过 `file.bytes` 进行上传。`CuUpload` 已内部兼容此逻辑。
+
+### 6.4 生产环境混淆 (Proguard)
+
+若开启了 `minifyEnabled true`，请在 `android/app/proguard-rules.pro` 中添加，防止 `file_picker` 和 `image_picker` 被错误混淆：
+
+```pro
+# File Picker 混淆保护
+-keep class com.mr.flutter.plugin.filepicker.** { *; }
+
+# Image Picker 混淆保护
+-keep class io.flutter.plugins.imagepicker.** { *; }
+
+# Dio 混淆保护 (用于上传)
+-keep class com.dio.** { *; }
+```
+
+### 6.5 权限预检代码建议
+
+在使用 `CuUpload` 前，建议配合 `permission_handler` 进行权限预检，以获得最佳用户体验：
+
+```dart
+if (await Permission.camera.request().isGranted) {
+  // 唤起 CuUpload
+} else {
+  CuToast.show("授权失败，请在设置中开启相机权限");
+}
+```
+
+---
+
+## 7. 常见问题与故障排除
+
+| 现象 | 原因分析 | 解决方案 |
+| :--- | :--- | :--- |
+| **iOS 闪退** | `Info.plist` 缺少描述键值对 | 检查 `NSPhotoLibraryUsageDescription` 是否拼写正确且不为空。 |
+| **Android 13 选图为空** | 缺少 `READ_MEDIA_IMAGES` 权限 | 检查 `compileSdkVersion` 是否已提升至 33。 |
+| **上传进度卡在 0%** | 网络代理或文件读取失败 | 检查 `Dio` 拦截器日志；尝试使用 `file.bytes` 替代 `file.path`。 |
+| **黑苹果无法拍照** | 模拟器或硬件驱动限制 | 模拟器不支持相机；真机调试请确认黑苹果 USB 摄像头驱动已打好。 |
+
+---
+
+## 8. 技术规范与逻辑映射
 
 ### 布局约束参考
 
@@ -315,4 +423,4 @@ CuCard(
 
 ---
 
-> **AI Prompt Context**: 关键词：`Upload`, `CuUpload`, `文件上传`, `图片上传`, `拍照`。原则：优先使用 `config` 配置上传行为；多平台使用需配置对应权限；Web 端自动禁用拍照；错误状态支持点击重试。
+>&gt; **AI Prompt Context**: 关键词：`Upload`, `CuUpload`, `文件上传`, `图片上传`, `拍照`, `AndroidManifest`, `Info.plist`, `FileProvider`, `Proguard`。原则：优先使用 `config` 配置上传行为；多平台使用需配置对应权限；Web 端自动禁用拍照；错误状态支持点击重试；使用前需完成平台配置。
