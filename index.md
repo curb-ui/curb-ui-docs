@@ -7,7 +7,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /
+      link: /content/introduce/index
     - theme: alt
       text: 查看组件
       link: /content/components/index 

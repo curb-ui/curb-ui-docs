@@ -21,6 +21,10 @@ export default defineConfig({
     sidebar: {
       "content/components/": [
         {
+           text: "使用指南",
+           link: "/content/components/index",
+        },
+        {
           text: "基础组件",
           items: [
             { text: "Button 按钮", link: "/content/components/cu_button" },
