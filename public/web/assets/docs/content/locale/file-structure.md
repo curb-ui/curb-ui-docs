@@ -80,11 +80,10 @@ flutter:
 ### 运行生成命令
 
 ```bash
-# 单次生成
-flutter pub run build_runner build --delete-conflicting-outputs
-
-# 监听模式（开发时使用）
-flutter pub run build_runner watch
+# 触发官方本地化生成
+flutter gen-l10n
+# 或者直接运行
+flutter pub get
 ```
 
 ## 文件命名规范
