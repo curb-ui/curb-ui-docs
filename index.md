@@ -16,6 +16,7 @@ features:
   - icon: 🚀
     title: Cool-Admin 生态兼容
     details: 深度适配 Cool-Admin 后端架构，内置登录鉴权、用户权限管理及文件上传等 API 逻辑，实现前后端无缝对接。
+    link: /content/api/admin
 
   - icon: 🧩
     title: 语义化组件

@@ -72,3 +72,10 @@ html, body {
 ::-webkit-scrollbar-thumb:vertical:hover {
   background-color: rgba(155, 155, 155, 0.7); 
 }
+html {
+  scroll-behavior: smooth;
+}
+
+.VPSidebar {
+  transition: transform 0.3s ease;
+}
