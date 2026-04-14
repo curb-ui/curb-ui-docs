@@ -152,6 +152,7 @@ onUnmounted(() => {
 .preview-info-card h2 {
   font-size: 32px;
   margin: 16px 0;
+  line-height: 1.25;
   background: linear-gradient(to right, var(--vp-c-text-1), var(--vp-c-brand));
   background-clip: text;
   -webkit-background-clip: text;

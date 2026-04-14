@@ -52,19 +52,34 @@ CuPage(
 
 ## 📅 项目现状
 
-目前，CurbUI 已完成核心组件库的构建，包括基础组件、表单组件、布局容器及交互反馈组件。项目正处于活跃的开发与维护阶段，并已成功在多个 Travel 与管理类 App 项目中得到应用验证。
+目前，CurbUI 已完成核心组件库的构建，包括基础组件、表单组件、布局容器及交互反馈组件。项目正处于活跃的开发与维护阶段，并已成功在多个应用项目中得到验证。
 
 * **当前版本**：v1.1.2
 * **开源协议**：MIT License
-* **开发者**：curbui@yeah.net (CurbUI Team)
+* **联系邮箱**：[curbui@yeah.net](mailto:curbui@yeah.net)
 
+---
+
+## 🛠️ 快速上手提示
+
+为了确保项目环境配置正确，请在克隆仓库后执行以下操作：
+
+1. **环境配置初始化**：
+   进入项目根目录，根据 `config_example.json` 模板新建各环境配置文件：
+   * 复制并命名为 `config_dev.json` (开发环境)
+   * 复制并命名为 `config_prod.json` (生产环境)
+
+2. **配置内容**：
+   在新建的 JSON 文件中填入对应的 `baseUrl`（如 Cool-Admin 后端地址）、`umengAppKey` 以及 `mapApiKey`。
+
+---
 
 ::: tip 准备好提升开发效率了吗？
 无需繁琐的配置，直接探索 CurbUI 的精致组件世界。
 :::
 
 <div style="text-align: center; padding: 40px 0;">
-  <a href="/content/components/index" style="
+  <a href="/content/components/cu_button" style="
     background: linear-gradient(120deg, #42a5f5, #ff4081);
     color: white;
     padding: 12px 36px;

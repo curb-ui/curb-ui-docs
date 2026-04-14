@@ -1,16 +1,8 @@
 ---
 layout: home
-hero:
-  name: CurbUI
-  text: 一个精致的 Flutter 设计系统
-  tagline: 开箱即用、极致语义化的 Flutter UI 框架
-  actions:
-    - theme: brand
-      text: 快速开始
-      link: /content/introduce/index
-    - theme: alt
-      text: 查看组件
-      link: /content/components/index 
+
+hero:  <HomeHero />
+ 
 
 features:
   - icon: 🚀
@@ -91,4 +83,3 @@ features:
 }
 </style>
 
-<HomePreview />
