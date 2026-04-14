@@ -21,34 +21,42 @@ features:
   - icon: 🧩
     title: 语义化组件
     details: 提供丰富的语义化组件，让开发像写 HTML 一样直观，通过简单的 API 即可实现复杂的页面布局。
+    link: /content/components/index
 
   - icon: 🎨
     title: 主题系统
     details: 完整的主题配置系统，支持动态色板、一键切换暗黑模式，自定义主题轻而易举。
+    link: /content/theme/index
 
   - icon: 🌍
     title: 国际化支持
     details: 开箱即用的多语言方案，支持中文和英文，轻松扩展新语言，适应全球用户。
+    link: /content/locale/index
 
   - icon: 🚦
     title: 路由管理
     details: 基于 GoRouter 的声明式导航，支持深度链接、参数自动注入和路由守卫。
+    link: /content/router/index
 
   - icon: 📡
     title: API 服务
     details: Retrofit 驱动的网络层，注解式请求，自动代码生成，集成缓存机制，让 API 开发更高效。
+    link: /content/api/index
 
   - icon: ⚡
     title: 开发效率
     details: 完整的项目架构方案，从环境配置到业务开发一站式解决，大幅提升全栈开发效率。
+    link: /content/about/index
 
   - icon: 🏗️
     title: 工程化落地
     details: 内置符合国内监管要求的开屏隐私合规流程、自动登录鉴权及多环境配置。
+    link: /content/welcome/index
 
   - icon: 🔧
     title: 状态管理
     details: Provider 响应式数据流，轻量级且高性能，让状态管理变得简单。
+    link: /content/state/index
 ---
 
 

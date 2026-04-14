@@ -1,6 +1,6 @@
 {
   "name": "CurbUI",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "packageName": "com.curbui.ui",
   "iosAppId": "123456789",
   "isForce": false,

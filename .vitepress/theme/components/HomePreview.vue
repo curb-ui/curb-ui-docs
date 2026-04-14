@@ -48,14 +48,14 @@
                 <p>版本：{{ appInfo.version }}</p>
               </div>
             </div>
-            <a href="/app/app-release.apk" class="mini-download-btn">下载 APK →</a>
+            <a :href="appInfo.downloadUrl" class="mini-download-btn">下载 APK →</a>
           </div>
         </div>
 
         <div class="stats-row">
-          <div class="stat"><strong>60+</strong><span>通用组件</span></div>
-          <div class="stat"><strong>120+</strong><span>语义化 API</span></div>
-          <div class="stat"><strong>Flutter</strong><span>轻量封装</span></div>
+          <div class="stat"><strong>极致语义</strong><span>零成本上手</span></div>
+          <div class="stat"><strong>主题系统</strong><span>一键切换动态色</span></div>
+          <div class="stat"><strong>生产级</strong><span>自研核心组件</span></div>
         </div>
       </div>
     </div>
