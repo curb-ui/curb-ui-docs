@@ -61,6 +61,140 @@ CuPage(
 
 ***
 
+## 📁 项目目录结构
+
+CurbUI 采用标准化的 Flutter 项目结构，清晰的目录划分便于维护与扩展：
+
+```
+curb_ui/
+├── .vscode/                   # VS Code 工作区配置
+├── android/                   # Android 平台原生代码
+│   ├── app/
+│   │   └── src/main/
+│   │       ├── kotlin/        # Kotlin 源代码
+│   │       ├── res/           # 资源文件（图标、样式）
+│   │       └── AndroidManifest.xml
+│   └── gradle/                # Gradle 构建配置
+├── ios/                       # iOS 平台原生代码
+│   ├── Flutter/
+│   ├── Runner/                # Xcode 主工程
+│   └── Runner.xcworkspace/
+├── lib/                       # Flutter 核心源代码目录
+│   ├── api/                   # API 层（Retrofit + Dio）
+│   │   ├── models/            # 数据模型定义
+│   │   │   ├── auth_model.dart
+│   │   │   ├── user_model.dart
+│   │   │   └── upload_model.dart
+│   │   ├── service/           # API 服务接口
+│   │   │   ├── auth_service.dart
+│   │   │   ├── user_service.dart
+│   │   │   └── upload_service.dart
+│   │   ├── request.dart       # 网络请求封装
+│   │   └── index.dart         # API 导出入口
+│   ├── components/            # CurbUI 组件库
+│   │   ├── button/            # 按钮组件
+│   │   ├── input/             # 输入框组件
+│   │   ├── page/              # 页面容器
+│   │   ├── dialog/            # 对话框组件
+│   │   ├── ...                # 其他组件
+│   │   └── index.dart         # 组件统一导出
+│   ├── config/                # 应用配置管理
+│   │   └── index.dart         # 环境配置读取
+│   ├── locale/                # 国际化资源
+│   │   ├── l10n/              # 多语言文件
+│   │   │   ├── intl_zh.arb    # 中文
+│   │   │   ├── intl_en.arb    # 英文
+│   │   │   └── app_localizations.dart
+│   │   ├── resource_delegate.dart  # 资源代理
+│   │   └── index.dart
+│   ├── pages/                 # 页面层
+│   │   ├── demo/              # 组件示例页面
+│   │   ├── index/             # 首页模块
+│   │   ├── setting/           # 设置页面
+│   │   ├── user/              # 用户模块（登录、反馈）
+│   │   └── welcome.dart       # 欢迎页
+│   ├── provider/              # 状态管理（Provider）
+│   │   ├── app.dart           # 应用状态
+│   │   ├── user.dart          # 用户状态
+│   │   └── index.dart
+│   ├── routes/                # 路由管理（GoRouter）
+│   │   ├── routes.dart        # 路由表定义
+│   │   ├── demo.dart          # 示例路由
+│   │   └── index.dart
+│   ├── theme/                 # 主题系统
+│   │   ├── color/             # 色彩系统
+│   │   ├── font/              # 字体配置
+│   │   ├── radius/            # 圆角配置
+│   │   ├── spacing/           # 间距配置
+│   │   ├── list/              # 预设主题列表
+│   │   ├── manager.dart       # 主题管理器
+│   │   └── index.dart
+│   ├── utils/                 # 工具类
+│   │   ├── screen.dart        # 屏幕适配
+│   │   ├── storage.dart       # 本地存储
+│   │   ├── logger.dart        # 日志工具
+│   │   └── index.dart
+│   ├── app.dart               # 应用入口
+│   ├── bootstrap.dart         # 启动引导
+│   ├── main.dart              # 主函数
+│   └── curb_ui.dart           # 库导出文件
+├── assets/                    # 静态资源文件
+│   ├── fonts/                 # 字体文件
+│   ├── images/                # 图片资源
+│   ├── svgs/                  # SVG 矢量图
+│   └── lotties/               # Lottie 动画
+├── docs/                      # VitePress 文档站点
+│   ├── .vitepress/            # VitePress 配置
+│   │   ├── config.ts          # 站点配置
+│   │   └── theme/             # 自定义主题
+│   ├── content/               # 文档内容
+│   │   ├── components/        # 组件文档
+│   │   ├── api/               # API 文档
+│   │   ├── theme/             # 主题文档
+│   │   ├── locale/            # 国际化文档
+│   │   ├── route/             # 路由文档
+│   │   ├── welcome/           # 启动页文档
+│   │   └── about/             # 关于页面（协议、隐私）
+│   ├── public/                # 静态资源
+│   │   ├── app/               # APK 下载
+│   │   └── web/               # Web 预览构建产物
+│   ├── index.md               # 文档首页
+│   └── package.json           # 文档依赖配置
+├── test/                      # 测试文件（待补充）
+├── config_example.json        # 配置文件模板
+├── pubspec.yaml               # Flutter 依赖配置
+├── analysis_options.yaml      # Dart 代码分析规则
+└── README.md                  # 项目说明文档
+```
+
+### 目录说明
+
+#### 核心目录
+
+- **`lib/`**：Flutter 应用的核心源代码目录，包含所有业务逻辑与组件实现
+- **`lib/components/`**：CurbUI 组件库，每个组件独立文件夹，包含实现文件与配置
+- **`lib/api/`**：后端 API 接口层，采用 Retrofit 模式定义网络请求
+- **`lib/theme/`**：主题系统，包含色彩、字体、间距等设计令牌
+- **`lib/locale/`**：国际化资源，支持多语言动态切换
+
+#### 平台目录
+
+- **`android/`**：Android 平台原生代码与构建配置
+- **`ios/`**：iOS 平台原生代码与 Xcode 工程配置
+
+#### 资源目录
+
+- **`assets/`**：应用内静态资源，包括图片、字体、动画等
+- **`docs/`**：VitePress 文档站点，包含完整的使用指南与 API 文档
+
+#### 配置目录
+
+- **`.trae/`**：Trae IDE 的项目规范与文档生成模板
+- **`.vscode/`**：VS Code 开发环境配置
+- **`config_*.json`**：应用运行时配置（开发环境、生产环境）
+
+***
+
 ## 🛠️ 快速上手提示
 
 为了确保项目环境配置正确，请在克隆仓库后执行以下操作：
@@ -70,18 +204,19 @@ CuPage(
    - 复制并命名为 `config_dev.json` (开发环境)
    - 复制并命名为 `config_prod.json` (生产环境)
 2. **配置内容**：
-  
-  ```json
-    {
-      "APP_NAME": "Curb UI",
-      "APP_VERSION": "1.0.0",
-      "API_URL": "https://show.cool-admin.com",
-      "BASE_URL": "/api",
-      "SHOW_LOGS": false,
-      "PRIVACY_URL": "https://gitee.com/curb-ui/curb-ui-docs/blob/master/content/about/privacy.md",
-      "AGREEMENTS_URL": "https://gitee.com/curb-ui/curb-ui-docs/blob/master/content/about/agreement.md",
-    }
-  ```
+
+```json
+  {
+    "APP_NAME": "Curb UI",
+    "APP_VERSION": "1.0.0",
+    "API_URL": "https://show.cool-admin.com",
+    "BASE_URL": "/api",
+    "SHOW_LOGS": false,
+    "PRIVACY_URL": "https://gitee.com/curb-ui/curb-ui-docs/blob/master/content/about/privacy.md",
+    "AGREEMENTS_URL": "https://gitee.com/curb-ui/curb-ui-docs/blob/master/content/about/agreement.md",
+  }
+```
+
 ***
 
 ::: tip 准备好提升开发效率了吗？
