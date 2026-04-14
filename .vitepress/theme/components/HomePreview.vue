@@ -241,6 +241,6 @@ onUnmounted(() => {
 @keyframes spin { to { transform: rotate(360deg); } }
 .preview-iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; padding-top: 0; }
 .dynamic-island { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 80px; height: 24px; background: #000; border-radius: 12px; z-index: 20; }
-.status-bar { position: absolute; top: 0; width: 100%; height: 36px; display: flex; justify-content: space-between; padding: 0 20px; align-items: center; font-size: 12px; z-index: 15; color: #000; font-weight: bold; }
+.status-bar { pointer-events: none; position: absolute; top: 0; width: 100%; height: 36px; display: flex; justify-content: space-between; padding: 0 20px; align-items: center; font-size: 12px; z-index: 15; color: #000; font-weight: bold; }
 .home-indicator { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 100px; height: 4px; background: rgba(0,0,0,0.1); border-radius: 2px; }
 </style>
