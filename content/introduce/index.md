@@ -132,7 +132,7 @@ curb_ui/
 │   ├── utils/                 # 工具类
 │   │   ├── screen.dart        # 屏幕适配
 │   │   ├── storage.dart       # 本地存储
-│   │   ├── logger.dart        # 日志工具
+│   │   ├── talker.dart        # 日志工具
 │   │   └── index.dart
 │   ├── app.dart               # 应用入口
 │   ├── bootstrap.dart         # 启动引导

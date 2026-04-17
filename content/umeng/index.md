@@ -138,7 +138,7 @@ class CuUmengService {
 
   /// 正式初始化 (隐私协议确认后执行)
   static Future<void> init() async {
-    logger.i('initUmeng');
+    talker.info('initUmeng');
     await _channel.invokeMethod('initUmeng', {
       'appKey': _appKey,
       'channel': _channelName,

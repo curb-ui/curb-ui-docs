@@ -23,7 +23,7 @@ Column(
         label: "选择图片",
       ),
       onChange: (urls) {
-        logger.d('上传成功: ${urls.toString()}');
+        talker.debug('上传成功: ${urls.toString()}');
       },
     ),
   ],
@@ -137,7 +137,7 @@ Column(
         label: "选择文件",
       ),
       onChange: (paths) {
-        logger.d('已选择文件: ${paths.toString()}');
+        talker.debug('已选择文件: ${paths.toString()}');
       },
     ),
     const SizedBox(height: CuSpacing.small),
@@ -257,7 +257,7 @@ CuCard(
           label: "选择凭证",
         ),
         onChange: (urls) {
-          logger.d('凭证上传: ${urls.toString()}');
+          talker.debug('凭证上传: ${urls.toString()}');
         },
       ),
     ],
