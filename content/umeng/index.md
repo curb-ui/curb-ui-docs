@@ -126,7 +126,7 @@ class CuUmengService {
 
   // 可以在这里统一管理 Key，或者从环境变量读取
   static const String _appKey = Config.umengAppId;
-  static const String _channelName = "GooglePlay";
+  static const String _channelName = "CurbUI-Android";
 
   /// 预初始化 (App启动就执行，不采集隐私)
   static Future<void> preInit() async {
